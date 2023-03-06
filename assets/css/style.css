@@ -1,0 +1,294 @@
+/* 
+    # Inter google font
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+
+/* 
+    # custom properties
+*/
+:root {
+    /* Colors */
+    --body-background: hsl(0, 0%, 96%);
+    --color: hsl(0, 0%, 10%);
+    --header-bg: hsl(0, 0%, 15%);
+    --header-text: hsl(0, 0%, 95%);
+    --main-color: hsl(50, 50%, 50%);
+}
+
+
+
+/* 
+    # Reset styles
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    background-color: var(--body-background);
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    font: inherit;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsla(0, 0%, 22%, 0.3);
+}
+
+
+/* 
+    # reused styles
+*/
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 20px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+    user-select: none;
+}
+
+
+/* 
+    # Header
+*/
+.header {
+    height: 70px;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .material-symbols-outlined {
+    font-size: 36px;
+    color: var(--main-color);
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo .logo-text {
+    color: var(--main-color);
+    font-weight: 700;
+}
+
+.navbar .cart {
+    cursor: pointer;
+    position: relative;
+}
+.cart .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: hsla(0, 0%, 90%, 0.2);
+    padding: 2px 3px;
+    border-radius: 6px;
+}
+
+/* 
+    # cart container sidebar
+*/
+.cart-container {
+    max-width: 400px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -400px;
+    background-color: hsl(0, 0%, 100%);
+    padding: 20px 10px;
+    transition: 0.3s linear;
+    z-index: 2;
+    overflow-y: scroll;
+}
+
+.cart-container.active {
+    left: 0;
+}
+
+.cart-container h2 {
+    text-align: center;
+    padding-block-end: 20px;
+    border-bottom: 1px solid hsl(0, 0%, 10%);
+    color: var(--main-color);
+}
+
+.cart-item {
+    display: flex;
+    gap: 15px;
+    margin-block: 20px;
+    box-shadow: 1px 1px 6px hsla(0, 0%, 22%, 0.3);
+    padding: 5px;
+}
+
+.cart-item .cart-img {
+    height: 100px;
+    width: 100px;
+}
+
+.cart-item .cart-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    width: 100%;
+}
+
+.cart-item-details .cart-item-title {
+    font-weight: 500;
+}
+.inc-dec {
+    display: flex;
+    gap: 5px;
+}
+.inc-dec input {
+    max-width: 50px;
+
+}
+.cart-item-details button {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+.price-detials {
+    display: flex;
+    justify-content: space-between;
+}
+.action {
+    display: flex;
+    justify-content: space-between;
+}
+.total-price {
+    margin-block: 100px;
+    text-align: right;
+}
+.total-price b {
+    margin-inline-end: 20px;
+}
+.total-price p {
+    margin-block-end: 10px;
+    font-size: 32px;
+}
+.btns {
+    display: flex;
+    justify-content: space-around;
+}
+.btns button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+.overlay.active {
+    background-color: hsla(0, 0%, 90%, 0.1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* 
+    # all products styles
+*/
+.products-page {
+    margin-block: 40px;
+}
+.products-page .h1 {
+    text-align: center;
+    margin-block-end: 20px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(250px, 1fr) );
+    column-gap: 10px;
+    row-gap: 20px;
+    place-items: center;
+}
+
+.products .product {
+    box-shadow: 1px 1px 6px hsla(0, 0%, 15%, 0.5);
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.product figure {
+    width: 100%;
+    height: 200px;
+    padding: 5px;
+}
+.product-title,
+.price-btn {
+    padding: 5px 20px;
+}
+.product-title {
+    font-size: 1.4rem;
+
+}
+.price-btn {
+    display: flex;
+    justify-content: space-between;
+}
+.price-btn button {
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--main-color);
+    color: var(--header-text);
+    padding: 4px 8px;
+}

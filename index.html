@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+        # title
+     -->
+    <title>Cart project</title>
+
+    <!-- 
+        # material-icons
+     -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <!-- 
+        # custom css file
+     -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <!-- 
+        # header 
+     -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <span class="material-symbols-outlined">
+                    local_mall
+                </span>
+                <span class="logo-text">My-Cart</span>
+            </a>
+            <div class="cart" cart-toggle>
+                <span class="material-symbols-outlined">
+                    shopping_cart
+                </span>
+                <span class="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- 
+        # All products
+     -->
+    <main>
+        <section class="products-page container">
+            <h1 class="h1">Our Products</h1>
+            <div class="products" data-products>
+                <!-- All products here -->
+            </div>
+        </section>
+    </main>
+
+
+    <!-- 
+        # Cart items
+     -->
+    <div class="cart-container" data-cart-container>
+        <span style="font-size: 36px;" class="material-symbols-outlined" data-close>
+            close
+        </span> 
+        <h2>Your cart</h2>
+        
+
+        <div class="cart-items" data-cart-products>
+            <!-- All cart items here -->
+        </div>
+
+
+        <div class="total-price">
+            <p class="cartQty"></p>
+            <p class="cartTotal"></p>
+            <div class="btns">
+                <button class="clear-all">Clear All</button>
+                <button class="Check-out">Check-out</button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="overlay"></div>
+    
+
+    <!-- 
+        # custom js file
+     -->
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
